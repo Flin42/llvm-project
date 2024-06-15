@@ -466,7 +466,7 @@ void ClangdLSPServer::callMethod(StringRef Method, llvm::json::Value Params,
 }
 
 void ClangdLSPServer::notify(llvm::StringRef Method, llvm::json::Value Params) {
-  log("--> {0}", Method);
+  log("--> xd xd xd {0}", Method);
   maybeCleanupMemory();
   std::lock_guard<std::mutex> Lock(TranspWriter);
   Transp.notify(Method, std::move(Params));

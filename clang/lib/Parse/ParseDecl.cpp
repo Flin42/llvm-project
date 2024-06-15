@@ -32,6 +32,7 @@
 #include "llvm/ADT/SmallSet.h"
 #include "llvm/ADT/SmallString.h"
 #include "llvm/ADT/StringSwitch.h"
+#include "llvm/Support/raw_ostream.h"
 #include <optional>
 
 using namespace clang;
@@ -3599,6 +3600,10 @@ void Parser::ParseDeclarationSpecifiers(
       // If this is not a declaration specifier token, we're done reading decl
       // specifiers.  First verify that DeclSpec's are consistent.
       DS.Finish(Actions, Policy);
+      return;
+
+    case tok::kw_mynewkeyword:
+      llvm::errs() << "IOASDHAOSBGFAISFDBAISFBAISUDFASIUDBASIDBUAS\n";
       return;
 
     // alignment-specifier

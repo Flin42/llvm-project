@@ -1005,9 +1005,10 @@ clangd accepts flags on the commandline, and in the CLANGD_FLAGS environment var
     TransportLayer = createPathMappingTransport(std::move(TransportLayer),
                                                 std::move(*Mappings));
   }
-
   ClangdLSPServer LSPServer(*TransportLayer, TFS, Opts);
   llvm::set_thread_name("clangd.main");
+
+  log("We're in business baby");
   int ExitCode = LSPServer.run()
                      ? 0
                      : static_cast<int>(ErrorResultCode::NoShutdownRequest);
